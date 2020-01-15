@@ -6,7 +6,7 @@ class ShoppingCart extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			shoppingListItems: []
+			shoppingListItems: [{ id: 1, title: 'Kaas' }]
 		};
 	}
 
