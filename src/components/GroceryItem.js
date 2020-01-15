@@ -1,12 +1,7 @@
 import React from 'react';
 
-const GroceryItem = function(props) {
-	console.log(props);
-	return (
-		<div>
-			<p>{props.title}</p>
-		</div>
-	);
-};
+const GroceryItem = props => (
+	<button onClick={() => props.handleClick(props.title)}>{props.title}</button>
+);
 
 export default GroceryItem;

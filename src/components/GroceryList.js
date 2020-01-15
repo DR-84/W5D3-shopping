@@ -30,9 +30,9 @@ import GroceryItem from './GroceryItem';
 
 const GroceryList = function() {
 	return (
-		<div>
+		<ul>
 			<GroceryItem />
-		</div>
+		</ul>
 	);
 };
 
