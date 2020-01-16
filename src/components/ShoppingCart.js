@@ -1,21 +1,17 @@
 import React from 'react';
-import GroceryList from './GroceryList';
-import GroceryItem from './GroceryItem';
-//import ShoppingCart from './ShoppingCart';
+import ShoppingCartItem from './ShoppingCartItem';
 
-class ShoppingCart extends React.Component {
-	constructor(props) {
-		super(props);
-		console.log(props);
-		this.state = {
-			shoppingListItems: []
-		};
-		console.log(this.state.title);
-	}
-
-	render() {
-		return <div>{this.state.title}</div>;
-	}
-}
+const ShoppingCart = props => {
+	console.log(props);
+	return props.items.map(item => (
+		<ShoppingCartItem
+			item={item}
+			handleClick={props.handleClick}
+			key={item.id}
+			title={item.title}
+			id={item.id}
+		/>
+	));
+};
 
 export default ShoppingCart;

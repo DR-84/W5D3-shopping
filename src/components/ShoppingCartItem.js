@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GroceryItem = props => {
+const ShoppingCartItem = props => {
 	//console.log(props);
 	return (
 		<button onClick={props.handleClick} id={props.id} title={props.title}>
@@ -8,4 +8,4 @@ const GroceryItem = props => {
 		</button>
 	);
 };
-export default GroceryItem;
+export default ShoppingCartItem;

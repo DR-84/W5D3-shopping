@@ -1,7 +1,6 @@
 import React from 'react';
 import ShoppingCart from './components/ShoppingCart';
-//import Grocerylist from './components/GroceryList';
-import GroceryItem from './components/GroceryItem';
+import GroceryList from './components/GroceryList';
 /* function Container() {
 	return (
 		<div>
@@ -23,31 +22,43 @@ class Container extends React.Component {
 				{ id: 3, title: 'Bier' },
 				{ id: 4, title: 'Thee' },
 				{ id: 5, title: 'Worteltjestaart' }
-			]
+			],
+			shoppingListItems: []
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
-	handleClick(event) {
-		const { title, value } = event.target;
-		console.log(title, value);
-		this.setState({ [title]: value });
+	handleClick(e) {
+		console.log('clicked e', e);
+		console.log('clicked e.target', e.target.title);
+		this.setState(prevState => {
+			return {
+				shoppingListItems: prevState.shoppingListItems
+			};
+		});
 	}
+
+	/* handleClick() {
+        this.setState(prevState => {
+            return {
+                count: prevState.countTwo + 2,
+                countTwo: prevState.count + 1
+            }
+        
+        })
+    } */
 
 	render() {
 		return (
 			<div>
 				<h2>Shopping List:</h2>
 				<div>
-					{this.state.groceryItems.map(item => (
-						<GroceryItem
-							handleClick={this.handleClick}
-							key={item.id}
-							title={item.title}
-						/>
-					))}
+					<GroceryList
+						handleClick={this.handleClick}
+						items={this.state.groceryItems}
+					/>
 				</div>
 				<h2>Shopping Cart:</h2>
-				<ShoppingCart title={this.state.content} />
+				<ShoppingCart items={this.state.shoppingListItems} />
 			</div>
 		);
 	}
