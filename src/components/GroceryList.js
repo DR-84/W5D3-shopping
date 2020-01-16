@@ -1,10 +1,9 @@
 import React from 'react';
 import GroceryItem from './GroceryItem';
-import inputField from './InputField';
+import InputField from './InputField';
 
 const GroceryList = props => {
-	//console.log(props);
-	return props.items.map(item => (
+	const inList = props.items.map(item => (
 		<GroceryItem
 			article={item}
 			handleClick={props.handleClick}
@@ -13,6 +12,13 @@ const GroceryList = props => {
 			id={item.id}
 		/>
 	));
+	return (
+		<div>
+			{inList}
+
+			<InputField />
+		</div>
+	);
 };
 
 export default GroceryList;

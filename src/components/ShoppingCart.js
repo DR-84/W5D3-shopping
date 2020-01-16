@@ -16,6 +16,7 @@ const ShoppingCart = function(props) {
 		<div>
 			<h2>Shopping Cart:</h2>
 			{inCart}
+			<hr></hr>
 			<button onClick={props.emptyCartClick}>EMPTY CART!!</button>
 		</div>
 	);

@@ -1,8 +1,15 @@
 import React from 'react';
 
-const ImputField = props => {
+const InputField = () => {
 	//console.log(props);
-	return <input type="text" placeholder="item on list"></input>;
+	return (
+		<form onSubmit="">
+			<label>
+				Add to List:
+				<input type={'text'} value="--add item here--" />
+			</label>
+			<input type="submit" value="Submit" />
+		</form>
+	);
 };
-
-export default ImputField;
+export default InputField;
