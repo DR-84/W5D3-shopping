@@ -1,9 +1,8 @@
 import React from 'react';
 import ShoppingCartItem from './ShoppingCartItem';
 
-/* const ShoppingCart = props => {
-	//console.log(props);
-	return props.items.map(item => (
+const ShoppingCart = function(props) {
+	const inCart = props.items.map(item => (
 		<ShoppingCartItem
 			item={item}
 			handleClick={props.handleClick}
@@ -12,7 +11,14 @@ import ShoppingCartItem from './ShoppingCartItem';
 			id={item.id}
 		/>
 	));
-}; */
 
-ShoppingCart = props => {};
+	return (
+		<div>
+			<h2>Shopping Cart:</h2>
+			{inCart}
+			<button onClick={props.emptyCartClick}>EMPTY CART!!</button>
+		</div>
+	);
+};
+
 export default ShoppingCart;

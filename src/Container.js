@@ -28,28 +28,46 @@ class Container extends React.Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 	handleClick(event) {
-		console.log('clicked e.target.id', event.target.title);
+		//console.log('clicked e.target', event.target.id);
+		let targetId = event.target.id;
+		let targetTitle = event.target.title;
+
 		this.setState(prevState => {
 			const updatedShoppinglistItems = prevState.shoppingListItems;
-			updatedShoppinglistItems.push(event.article);
+			updatedShoppinglistItems.push({
+				id: targetId,
+				title: targetTitle
+			});
 			return {
 				shoppingListItems: updatedShoppinglistItems
 			};
 		});
 	}
+	emptyCart = () => {
+		//console.log('emptycart button', e);
+		this.setState(prevState => {
+			return {
+				shoppingListItems: []
+			};
+		});
+	};
 
 	render() {
 		return (
 			<div>
 				<h2>Shopping List:</h2>
-				<div>
+				<div class="shopping-list">
 					<GroceryList
 						handleClick={this.handleClick}
 						items={this.state.groceryItems}
 					/>
 				</div>
-				<h2>Shopping Cart:</h2>
-				<ShoppingCart items={this.state.shoppingListItems} />
+				<div class="shopping-cart">
+					<ShoppingCart
+						emptyCartClick={this.emptyCart}
+						items={this.state.shoppingListItems}
+					/>
+				</div>
 			</div>
 		);
 	}

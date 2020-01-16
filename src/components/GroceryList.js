@@ -1,5 +1,6 @@
 import React from 'react';
 import GroceryItem from './GroceryItem';
+import inputField from './InputField';
 
 const GroceryList = props => {
 	//console.log(props);
