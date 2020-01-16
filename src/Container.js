@@ -23,7 +23,7 @@ class Container extends React.Component {
 				{ id: 4, title: 'Thee' },
 				{ id: 5, title: 'Worteltjestaart' }
 			],
-			shoppingListItems: []
+			shoppingListItems: [{ id: 1, title: 'Kaas' }]
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
