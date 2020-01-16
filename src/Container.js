@@ -23,22 +23,15 @@ class Container extends React.Component {
 				{ id: 3, title: 'Bier' },
 				{ id: 4, title: 'Thee' },
 				{ id: 5, title: 'Worteltjestaart' }
-			],
-			shoppingListItems: []
+			]
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
-
-	handleClick(e) {
-		console.log(e);
-		//this.setState({ value: event.target });
+	handleClick(event) {
+		const { title, value } = event.target;
+		console.log(title, value);
+		this.setState({ [title]: value });
 	}
-	/* this.setState(setState => {
-			console.log(setState.groceryItems.value);
-			return {
-				shoppingListItems: setState.title
-			};
-		}); */
 
 	render() {
 		return (
@@ -53,8 +46,8 @@ class Container extends React.Component {
 						/>
 					))}
 				</div>
-
-				<ShoppingCart />
+				<h2>Shopping Cart:</h2>
+				<ShoppingCart title={this.state.content} />
 			</div>
 		);
 	}

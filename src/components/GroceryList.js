@@ -29,11 +29,7 @@ import GroceryItem from './GroceryItem';
 } */
 
 const GroceryList = function() {
-	return (
-		<ul>
-			<GroceryItem />
-		</ul>
-	);
+	return <GroceryItem />;
 };
 
 export default GroceryList;

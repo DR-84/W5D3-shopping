@@ -1,21 +1,20 @@
 import React from 'react';
 import GroceryList from './GroceryList';
-//import GroceryList from './GroceryList';
+import GroceryItem from './GroceryItem';
 //import ShoppingCart from './ShoppingCart';
 
 class ShoppingCart extends React.Component {
-	constructor() {
-		super();
-		this.state = {};
+	constructor(props) {
+		super(props);
+		console.log(props);
+		this.state = {
+			shoppingListItems: []
+		};
+		console.log(this.state.title);
 	}
 
 	render() {
-		return (
-			<div>
-				<h2>Shopping Cart:</h2>
-				<GroceryList />
-			</div>
-		);
+		return <div>{this.state.title}</div>;
 	}
 }
 
