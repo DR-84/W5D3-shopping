@@ -23,29 +23,20 @@ class Container extends React.Component {
 				{ id: 4, title: 'Thee' },
 				{ id: 5, title: 'Worteltjestaart' }
 			],
-			shoppingListItems: [{ id: 1, title: 'Kaas' }]
+			shoppingListItems: []
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
-	handleClick(e) {
-		console.log('clicked e', e);
-		console.log('clicked e.target', e.target.title);
+	handleClick(event) {
+		console.log('clicked e.target.id', event.target.title);
 		this.setState(prevState => {
+			const updatedShoppinglistItems = prevState.shoppingListItems;
+			updatedShoppinglistItems.push(event.article);
 			return {
-				shoppingListItems: prevState.shoppingListItems
+				shoppingListItems: updatedShoppinglistItems
 			};
 		});
 	}
-
-	/* handleClick() {
-        this.setState(prevState => {
-            return {
-                count: prevState.countTwo + 2,
-                countTwo: prevState.count + 1
-            }
-        
-        })
-    } */
 
 	render() {
 		return (

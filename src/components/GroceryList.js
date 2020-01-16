@@ -5,7 +5,7 @@ const GroceryList = props => {
 	//console.log(props);
 	return props.items.map(item => (
 		<GroceryItem
-			item={item}
+			article={item}
 			handleClick={props.handleClick}
 			key={item.id}
 			title={item.title}

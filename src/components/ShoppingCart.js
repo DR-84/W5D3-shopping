@@ -1,8 +1,8 @@
 import React from 'react';
 import ShoppingCartItem from './ShoppingCartItem';
 
-const ShoppingCart = props => {
-	console.log(props);
+/* const ShoppingCart = props => {
+	//console.log(props);
 	return props.items.map(item => (
 		<ShoppingCartItem
 			item={item}
@@ -12,6 +12,7 @@ const ShoppingCart = props => {
 			id={item.id}
 		/>
 	));
-};
+}; */
 
+ShoppingCart = props => {};
 export default ShoppingCart;
